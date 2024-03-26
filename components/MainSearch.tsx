@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
@@ -13,7 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 
-const tags = ["0Design", "1Design", "2Design", "3Design"];
+const tags = ["0Design", "1Design", "2Design", "3Design", "4Design", "5Design"];
 
 const MainSearch = () => {
   const [position, setPosition] = React.useState("Following");
@@ -28,9 +27,11 @@ const MainSearch = () => {
             placeholder="Search here..."
           />
         </div>
-        {/* <div className="hidden lg:flex  w-full items-center">
+      </div>
+      <div>
+        <div className="lg:flex hidden  w-full items-center">
           <span className="text-primary mr-3">My topics: </span>
-          <div className="flex gap-x-3 text-sm">
+          <div className="lg:flex hidden  gap-x-3 text-sm">
             {tags.map((e) => {
               return (
                 <div
@@ -42,7 +43,7 @@ const MainSearch = () => {
               );
             })}
           </div>
-        </div> */}
+        </div>
       </div>
       <div className=" items-center py-3  border-b-2 flex justify-between px-6">
         <div className="font-semibold">Article :</div>

@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const ReadingList = () => {
   return (
-    <div className="grid grid-cols-12 my-4  items-center space-x-3 ">
+    <div className="grid grid-cols-12 group  my-4  items-center space-x-3 ">
       <div className="col-span-4">
         <Image
           className="rounded-md"
@@ -15,7 +15,7 @@ const ReadingList = () => {
         />
       </div>
       <div className="col-span-8">
-        <div className="text-sm font-bold my-2">
+        <div className="text-sm group-hover:underline  font-bold my-2">
           Lorem ipsum dolor sit amet, consectetur adipisicing.
         </div>
         <div className="text-xs">

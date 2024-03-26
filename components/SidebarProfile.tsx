@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const SidebarProfile = () => {
   return (
-    <div className="flex my-3 items-center space-x-2 ">
+    <div className="flex group  my-3 items-center space-x-2 ">
       <div>
         <Avatar>
           <AvatarImage src="https://github.com/shadcn.png" />
@@ -12,7 +12,9 @@ const SidebarProfile = () => {
         </Avatar>
       </div>
       <div>
-        <div className="text-sm font-bold">Shubhankit Jain</div>
+        <div className="text-sm font-bold group-hover:underline ">
+          Shubhankit Jain
+        </div>
         <div className="text-xs">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate.
         </div>
