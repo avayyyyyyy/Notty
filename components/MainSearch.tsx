@@ -18,7 +18,7 @@ const tags = ["0Design", "1Design", "2Design", "3Design"];
 const MainSearch = () => {
   const [position, setPosition] = React.useState("Following");
   return (
-    <div className="flex flex-col  space-y-6">
+    <div className="flex flex-col">
       <div className="flex items-center justify-between px-4 h-fit space-x-4">
         <div className="my-5 w-full font-semibold  flex items-center gap-x-2">
           Search:
@@ -54,7 +54,6 @@ const MainSearch = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel>Visibility</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuRadioGroup
                 value={position}

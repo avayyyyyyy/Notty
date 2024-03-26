@@ -9,7 +9,9 @@ const Navbar = () => {
       <div className="md:col-span-4 col-span-2">
         <Menu className="cursor-pointer" />
       </div>
-      <div className="font-extrabold md:font-bold col-span-8 md:col-span-4 text-center text-2xl md:text-4xl  lg:text-5xl">NOTTY</div>
+      <div className="font-bold md:font-semibold col-span-8 md:col-span-4 text-center text-2xl md:text-4xl  lg:text-5xl">
+        NOTTY
+      </div>
       <div className="md:col-span-4 col-span-2  justify-end  flex space-x-3 items-center">
         <div className="hidden  md:block">
           <ModeToggle />
@@ -19,7 +21,7 @@ const Navbar = () => {
         </div>
         <div className="hidden cursor-pointer  md:block">
           <Avatar>
-            <AvatarImage  src="https://github.com/shadcn.png" />
+            <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </div>

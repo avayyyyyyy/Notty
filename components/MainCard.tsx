@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const MainCard = () => {
   return (
-    <div className="mt-5 grid grid-cols-12 gap-x-2  border-b-2 w-[96%] mx-auto  items-center">
+    <div className="mt-5 grid grid-cols-12 gap-x-2 group  border-b-2 w-[90%] mx-auto  items-center">
       <div className="col-span-8">
         <div className="flex gap-x-2 items-center ml-2">
           <div>
@@ -21,7 +21,7 @@ const MainCard = () => {
             <div className="text-secondary-foreground">Founder @ Notty</div>
           </div>
         </div>
-        <div className="text-3xl font-bold mt-3">
+        <div className="text-2xl group-hover:underline cursor-pointer  font-bold mt-3">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
           architecto cumque est in!
         </div>
@@ -33,10 +33,28 @@ const MainCard = () => {
           quidem repudiandae, nam accusantium eos, eius, nisi rem iste? Id animi
           esse deserunt consectetur cupiditate.
         </div>
+        <div className="flex items-center py-3 ">
+          My Topics:
+          <div className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full">
+            Tag 1
+          </div>
+          <div className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full">
+            Tag 2
+          </div>
+          <div className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full">
+            Tag 3
+          </div>
+          <div className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full">
+            Tag 4
+          </div>
+          <div className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full">
+            Tag 5
+          </div>
+        </div>
       </div>
       <div className="col-span-4">
         <Image
-          className="border "
+          className="border transition-all hover:scale-110 hover:shadow-xl ease-in-out duration-300  "
           src={
             "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg"
           }
