@@ -3,6 +3,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import Image from "next/image";
 
 const MainCard = () => {
+  const tags = ["0 Tag", "1 Tag", "2 Tag", "3 Tag", "4 Tag", "5 Tag"];
+
   return (
     <div className="mt-5 grid grid-cols-12 gap-x-2 group  border-b-2 w-[90%] mx-auto  items-center">
       <div className="col-span-8">
@@ -34,22 +36,17 @@ const MainCard = () => {
           esse deserunt consectetur cupiditate.
         </div>
         <div className="flex items-center py-3 ">
-          My Topics:
-          <div className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full">
-            Tag 1
-          </div>
-          <div className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full">
-            Tag 2
-          </div>
-          <div className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full">
-            Tag 3
-          </div>
-          <div className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full">
-            Tag 4
-          </div>
-          <div className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full">
-            Tag 5
-          </div>
+          <div className="font-bold">My Topics:</div>
+          {tags.map((e) => {
+            return (
+              <div
+                key={e}
+                className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full"
+              >
+                {e}
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className="col-span-4">

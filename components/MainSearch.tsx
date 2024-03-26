@@ -12,14 +12,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 
-const tags = ["0Design", "1Design", "2Design", "3Design", "4Design", "5Design"];
+const tags = ["0 Tag", "1 Tag", "2 Tag", "3 Tag", "4 Tag", "5 Tag"];
 
 const MainSearch = () => {
   const [position, setPosition] = React.useState("Following");
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-between px-4 h-fit space-x-4">
-        <div className="my-5 w-full font-semibold  flex items-center gap-x-2">
+        <div className="my-5 w-full font-semibold mx-4  flex items-center gap-x-2">
           Search:
           <Input
             type="text"
@@ -29,14 +29,14 @@ const MainSearch = () => {
         </div>
       </div>
       <div>
-        <div className="lg:flex hidden px-4  w-full items-center">
+        <div className="lg:flex hidden px-4 mx-4  w-full items-center">
           <span className="text-primary mr-3 font-semibold">My topics: </span>
           <div className="lg:flex hidden  gap-x-3 text-sm">
             {tags.map((e) => {
               return (
                 <div
                   key={e}
-                  className="bg-primary px-3 text-secondary cursor-pointer py-2 rounded-full"
+                  className="bg-primary/10 px-3 ml-2  py-1.5 w-fit text-sm  text-primary cursor-pointer rounded-full"
                 >
                   {e}
                 </div>
@@ -45,7 +45,7 @@ const MainSearch = () => {
           </div>
         </div>
       </div>
-      <div className=" items-center py-3  border-b-2 flex justify-between px-6">
+      <div className=" items-center py-3  border-b-2 flex justify-between mx-8">
         <div className="font-semibold">Article :</div>
         <div>
           <DropdownMenu>
