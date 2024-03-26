@@ -46,7 +46,7 @@ const MainSearch = () => {
         </div>
       </div>
       <div className=" items-center py-3  border-b-2 flex justify-between mx-8">
-        <div className="font-semibold">Article :</div>
+        <div className="font-semibold">Articles :</div>
         <div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

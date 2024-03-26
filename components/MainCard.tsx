@@ -20,7 +20,9 @@ const MainCard = () => {
               <span className="font-bold">Shubhankit Jain</span> •{" "}
               <span>Nov 30, 2024</span>
             </div>
-            <div className="text-secondary-foreground">Founder @ Notty</div>
+            <div className="text-secondary-foreground text-xs">
+              Founder @ Notty
+            </div>
           </div>
         </div>
         <div className="text-2xl group-hover:underline cursor-pointer  font-bold mt-3">
