@@ -1,6 +1,7 @@
 import React from "react";
 import MainSearch from "./MainSearch";
 import MainCard from "./MainCard";
+import Sidebar from "./Sidebar";
 
 const Hero = () => {
   return (
@@ -12,7 +13,9 @@ const Hero = () => {
         <MainCard />
         <MainCard />
       </div>
-      <div className="col-span-4 flex justify-center h-full">Submain</div>
+      <div className="col-span-4 flex justify-center h-full">
+        <Sidebar />
+      </div>
     </div>
   );
 };

@@ -5,7 +5,11 @@ const nextConfig = {
             {
                 hostname:"t3.ftcdn.net",
                 protocol: "https"
-            }
+            },
+            {
+                hostname:"raw.githubusercontent.com",
+                protocol: "https"
+            },
         ]
     }
 };

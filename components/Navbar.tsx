@@ -1,4 +1,4 @@
-import { Bell, Menu, NotebookPen, User } from "lucide-react";
+import { Bell, Menu, NotebookPen } from "lucide-react";
 import React from "react";
 import { ModeToggle } from "./toggle-theme";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
