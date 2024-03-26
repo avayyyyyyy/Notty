@@ -29,8 +29,8 @@ const MainSearch = () => {
         </div>
       </div>
       <div>
-        <div className="lg:flex hidden  w-full items-center">
-          <span className="text-primary mr-3">My topics: </span>
+        <div className="lg:flex hidden px-4  w-full items-center">
+          <span className="text-primary mr-3 font-semibold">My topics: </span>
           <div className="lg:flex hidden  gap-x-3 text-sm">
             {tags.map((e) => {
               return (
