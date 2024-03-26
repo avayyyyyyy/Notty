@@ -4,7 +4,8 @@ import { ModeToggle } from "./toggle-theme";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
-import Signin from "./Signin";
+import { Register } from "./Register";
+import { Login } from "./Login";
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
@@ -38,7 +39,10 @@ const Navbar = async () => {
             </div>
           </>
         ) : (
-          <Signin />
+          <>
+            <Login />
+            <Register />
+          </>
         )}
       </div>
     </div>

@@ -51,7 +51,7 @@ const MainCard = () => {
       </div>
       <div className="col-span-4">
         <Image
-          className="border transition-all hover:scale-110 hover:shadow-xl ease-in-out duration-300  "
+          className="border rounded-lg transition-all hover:scale-110 hover:shadow-xl ease-in-out duration-300  "
           src={
             "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg"
           }

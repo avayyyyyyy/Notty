@@ -9,7 +9,7 @@ const Promotion = () => {
           Lorem ipsum dolor sit amet, consectetur adipisicing. Nostrum.
         </div>
         <div className="text-sm">Lorem ipsum dolor sit amet.</div>
-        <div className="px-2 py-1.5 text-sm  text-secondary bg-secondary/20 h-fit w-fit rounded-full">
+        <div className="px-2 cursor-pointer hover:bg-secondary/70 transition-all ease-in-out   py-1.5 text-sm  text-secondary-foreground bg-secondary/40 h-fit w-fit rounded-full">
           Get Unlimited Access
         </div>
       </div>
