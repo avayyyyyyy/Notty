@@ -23,7 +23,7 @@ const Navbar = () => {
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </div>
-        <div className="flex font-semibold  gap-2 border-primary text-base cursor-pointer border px-4 py-2 rounded-md items-center">
+        <div className="flex font-semibold  gap-2 hover:border-primary transition-all text-base cursor-pointer border px-4 py-2 rounded-md items-center">
           Write <NotebookPen size={15} />
         </div>
       </div>
