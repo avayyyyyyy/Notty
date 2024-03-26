@@ -8,9 +8,6 @@ import Signin from "./Signin";
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
-
-  console.log("session", session);
-
   return (
     <div className="w-screen grid grid-cols-12  text-primary md:px-20 px-6 py-5 items-center border-b-2 shadow-sm justify-between">
       <div className="md:col-span-4 col-span-2">
