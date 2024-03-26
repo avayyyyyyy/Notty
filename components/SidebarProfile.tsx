@@ -12,7 +12,7 @@ const SidebarProfile = () => {
         </Avatar>
       </div>
       <div>
-        <div className="text-sm cursor-pointer hover:text-zinc-200  font-bold">
+        <div className="text-sm cursor-pointer hover:text-primary/70  font-bold">
           Shubhankit Jain
         </div>
         <div className="text-xs">
