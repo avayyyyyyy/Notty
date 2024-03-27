@@ -6,6 +6,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import { Register } from "./Register";
 import { Login } from "./Login";
+import SignOut from "./SignOut";
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
@@ -37,6 +38,7 @@ const Navbar = async () => {
             <div className="flex font-semibold gap-2 hover:border-primary transition-all text-sm md:text-base cursor-pointer border px-4 py-2 rounded-md items-center">
               Write <NotebookPen size={15} />
             </div>
+            <SignOut />
           </>
         ) : (
           <>

@@ -13,20 +13,53 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
-import { Card, CardFooter } from "./ui/card";
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 import { Separator } from "@/components/ui/separator";
+import { useContext } from "react";
+import { GlobalContext } from "@/context/GlobalContext";
+import { signIn } from "next-auth/react";
 
 export function Register() {
+  const { isRegisterOpen, setIsRegisterOpen, setIsLoginOpen, isLoginOpen } =
+    useContext(GlobalContext);
+
   return (
-    <Dialog>
+    <Dialog open={isRegisterOpen}>
       <DialogTrigger asChild>
-        <Button>Signup</Button>
+        <Button onClick={() => setIsRegisterOpen(!isRegisterOpen)}>
+          Signup
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Register</DialogTitle>
+          <DialogTitle className="flex justify-between items-center">
+            <div>Register</div>
+            <div
+              onClick={() => {
+                setIsRegisterOpen(false);
+              }}
+              className="text-sm font-bold rounded-md p-2 border cursor-pointer"
+            >
+              X
+            </div>
+          </DialogTitle>
           <DialogDescription>
-            Already have an account? Login now...
+            Already have an account?{" "}
+            <span
+              className="text-secondary-foreground underline cursor-pointer"
+              onClick={() => {
+                setIsRegisterOpen(!isRegisterOpen);
+                setIsLoginOpen(!isLoginOpen);
+              }}
+            >
+              Login now!
+            </span>
           </DialogDescription>
         </DialogHeader>
         <Card className="w-full mx-auto">
@@ -42,11 +75,19 @@ export function Register() {
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="password">Password:</Label>
-                <Input id="password" placeholder="Password Here " />
+                <Input
+                  type="password"
+                  id="password"
+                  placeholder="Password Here "
+                />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="cnfPassword">Confirm Password:</Label>
-                <Input id="cnfPassword" placeholder="Confirm Password Here" />
+                <Input
+                  type="password"
+                  id="cnfPassword"
+                  placeholder="Confirm Password Here"
+                />
               </div>
               <Button className="mb-3">Register</Button>
             </div>

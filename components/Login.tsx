@@ -16,17 +16,48 @@ import { FaGoogle } from "react-icons/fa";
 import { Card, CardFooter } from "./ui/card";
 import { Separator } from "@/components/ui/separator";
 import { signIn } from "next-auth/react";
+import { useContext } from "react";
+import { GlobalContext } from "@/context/GlobalContext";
 
 export function Login() {
+  const { isLoginOpen, setIsLoginOpen, isRegisterOpen, setIsRegisterOpen } =
+    useContext(GlobalContext);
+
   return (
-    <Dialog>
+    <Dialog open={isLoginOpen}>
       <DialogTrigger asChild>
-        <Button variant={"secondary"}>Login</Button>
+        <Button
+          onClick={() => setIsLoginOpen(!isLoginOpen)}
+          variant={"secondary"}
+        >
+          Login
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Login</DialogTitle>
-          <DialogDescription>New to Notty? Register Now...</DialogDescription>
+          <DialogTitle className="flex justify-between items-center">
+            <div>Login</div>
+            <div
+              onClick={() => {
+                setIsLoginOpen(false);
+              }}
+              className="text-sm font-bold rounded-md p-2 border cursor-pointer"
+            >
+              X
+            </div>
+          </DialogTitle>
+          <DialogDescription>
+            New to Notty?{" "}
+            <span
+              className="text-secondary-foreground underline cursor-pointer"
+              onClick={() => {
+                setIsRegisterOpen(true);
+                setIsLoginOpen(false);
+              }}
+            >
+              Register Now!
+            </span>
+          </DialogDescription>
         </DialogHeader>
         <Card className="w-full mx-auto">
           <form className="p-3">
@@ -37,9 +68,13 @@ export function Login() {
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="password">Password:</Label>
-                <Input id="password" placeholder="Password Here " />
+                <Input
+                  type="password"
+                  id="password"
+                  placeholder="Password Here "
+                />
               </div>
-              <Button className="mb-3">Register</Button>
+              <Button className="mb-3">Login</Button>
             </div>
           </form>
           <Separator orientation="horizontal" />
