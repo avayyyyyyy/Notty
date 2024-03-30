@@ -13,13 +13,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardFooter } from "./ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useContext } from "react";
 import { GlobalContext } from "@/context/GlobalContext";
@@ -39,7 +33,7 @@ export function Register() {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="flex justify-between items-center">
-            <div>Register</div>
+            <div>Create an account</div>
             <div
               onClick={() => {
                 setIsRegisterOpen(false);
@@ -92,21 +86,18 @@ export function Register() {
               <Button className="mb-3">Register</Button>
             </div>
           </form>
-          <Separator orientation="horizontal" />
+          <Separator orientation="horizontal" className="w-[90%] mx-auto " />
           <CardFooter className="flex flex-col mt-5 space-y-2">
-            <Button
-              onClick={() => signIn("google")}
-              className="w-full flex space-x-2 "
-            >
-              Continue With Google <FaGoogle className="ml-2" />
-            </Button>
-            <Button
-              onClick={() => signIn("github")}
-              className="w-full flex space-x-2 "
-            >
-              Continue With Github
-              <FaGithub className="ml-2" />
-            </Button>
+            <div className="grid grid-cols-2 gap-6">
+              <Button onClick={() => signIn("github")} variant="outline">
+                <FaGithub className="mr-2 h-4 w-4  " />
+                Github
+              </Button>
+              <Button onClick={() => signIn("google")} variant="outline">
+                <FaGoogle className="mr-2 h-4 w-4" />
+                Google
+              </Button>
+            </div>
           </CardFooter>
         </Card>
       </DialogContent>

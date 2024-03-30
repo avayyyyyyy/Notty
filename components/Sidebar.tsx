@@ -14,7 +14,7 @@ const Sidebar = () => {
         <SidebarProfile />
       </div>
       <div className="font-bold my-2">My Reading List:</div>
-      <ReadingList />
+      {/* <ReadingList /> */}
       <ReadingList />
       <ReadingList />
     </aside>

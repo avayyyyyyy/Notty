@@ -77,21 +77,18 @@ export function Login() {
               <Button className="mb-3">Login</Button>
             </div>
           </form>
-          <Separator orientation="horizontal" />
+          <Separator orientation="horizontal" className="w-[90%] mx-auto " />
           <CardFooter className="flex flex-col mt-5 space-y-2">
-            <Button
-              onClick={() => signIn("google")}
-              className="w-full flex space-x-2 "
-            >
-              Continue With Google <FaGoogle className="ml-2" />
-            </Button>
-            <Button
-              onClick={() => signIn("github")}
-              className="w-full flex space-x-2 "
-            >
-              Continue With Github
-              <FaGithub className="ml-2" />
-            </Button>
+            <div className="grid grid-cols-2 gap-6">
+              <Button onClick={() => signIn("github")} variant="outline">
+                <FaGithub className="mr-2 h-4 w-4  " />
+                Github
+              </Button>
+              <Button onClick={() => signIn("google")} variant="outline">
+                <FaGoogle className="mr-2 h-4 w-4" />
+                Google
+              </Button>
+            </div>
           </CardFooter>
         </Card>
       </DialogContent>

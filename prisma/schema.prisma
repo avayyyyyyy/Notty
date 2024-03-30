@@ -41,13 +41,17 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String     @id @default(cuid())
   name          String?
-  email         String?   @unique
-  emailVerified DateTime?
+  email         String?    @unique
+  emailVerified Boolean    @default(false)
   image         String?
   accounts      Account[]
   sessions      Session[]
+  posts         Post[]
+  comments      Comment[]
+  likes         Like[]
+  bookmarks     Bookmark[]
 }
 
 model VerificationToken {
@@ -56,4 +60,64 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Post {
+  id            String     @id @default(cuid())
+  title         String     @unique
+  description   String
+  slug          String
+  featuredImage String
+  html          String     @db.Text
+  text          String     @db.Text
+  authorId      String
+  author        User       @relation(fields: [authorId], references: [id])
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  tags          Tag[]
+  comments      Comment[]
+  likes         Like[]
+  bookamarks    Bookmark[]
+}
+
+model Tag {
+  id          String  @id @default(uuid())
+  name        String
+  description String?
+  slug        String
+  post        Post[]
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  userId    String
+  postId    String
+  user      User     @relation(fields: [userId], references: [id])
+  post      Post     @relation(fields: [postId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Like {
+  id        String   @id @default(cuid())
+  userId    String
+  PostID    String
+  user      User     @relation(fields: [userId], references: [id])
+  post      Post     @relation(fields: [PostID], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([PostID, userId])
+}
+
+model Bookmark {
+  id        String   @id @default(cuid())
+  userId    String
+  PostID    String
+  user      User     @relation(fields: [userId], references: [id])
+  post      Post     @relation(fields: [PostID], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([PostID, userId])
 }

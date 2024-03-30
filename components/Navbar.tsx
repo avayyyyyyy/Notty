@@ -7,6 +7,7 @@ import { getServerSession } from "next-auth";
 import { Register } from "./Register";
 import { Login } from "./Login";
 import SignOut from "./SignOut";
+import { CreateModal } from "./CreateModal";
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
@@ -16,7 +17,7 @@ const Navbar = async () => {
         <Menu className="cursor-pointer" />
       </div>
       <div className="font-bold md:font-semibold col-span-8 md:col-span-4 text-center text-2xl md:text-4xl  lg:text-5xl">
-        NOTTY
+        MEDIUM
       </div>
       <div className="md:col-span-4 col-span-2  justify-end  flex space-x-3 items-center">
         <div className="hidden  md:block">
@@ -35,9 +36,7 @@ const Navbar = async () => {
                 </AvatarFallback>
               </Avatar>
             </div>
-            <div className="flex font-semibold gap-2 hover:border-primary transition-all text-sm md:text-base cursor-pointer border px-4 py-2 rounded-md items-center">
-              Write <NotebookPen size={15} />
-            </div>
+            <CreateModal />
             <SignOut />
           </>
         ) : (
